@@ -1,0 +1,30 @@
+<html>
+
+  <input type="text" name="" value=""><br>
+  <input type="submit" name=""><br>
+  <input type="file" name=""><br>
+  <input type="date" name=""><br>
+  <input type="radio" name=""><br>
+  <input type="range" name="">
+    <button id="button">generate pdf</button>
+
+  <scrip src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+  <script>
+  var form=document.getElementById('form')
+  form.addEventlistener('submit',function(event){event.preventDefault()
+  var text=document.getElementById('text').value
+  var fontsize=document.getElementById('fontsize').value
+  var doc =new jsPDF()
+  doc.setFontSize(fontSize)
+
+  doc.text(text,20,20)
+  doc.save("output.pdf")
+  })
+
+
+  </script>
+  </body>
+
+
+
+</html>
